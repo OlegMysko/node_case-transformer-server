@@ -14,9 +14,7 @@ function createServer() {
     if (req.method !== 'GET') {
       res.statusCode = 404;
 
-      res.end({
-        errors: [{ message: 'Not Found' }],
-      });
+      res.end(JSON.stringify({ errors: [{ message: 'Not Found' }] }));
 
       return;
     }
